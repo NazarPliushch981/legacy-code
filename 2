@@ -1,0 +1,40 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+class Program
+{
+    //  Beep
+    [DllImport("kernel32.dll")]
+    public static extern bool Beep(int freq, int duration);
+
+// MessageBeep
+    [DllImport("user32.dll")]
+    public static extern bool MessageBeep(uint type);
+
+    static void Main()
+    {
+        Console.WriteLine("Звуки");
+
+        Beep(500, 500);
+        Thread.Sleep(300);
+
+        Beep(700, 500);
+        Thread.Sleep(300);
+
+        Beep(900, 500);
+        Thread.Sleep(300);
+
+        MessageBeep(0);
+        Thread.Sleep(300);
+
+        MessageBeep(1);
+        Thread.Sleep(300);
+
+        MessageBeep(2);
+        Thread.Sleep(300);
+
+        Console.WriteLine("Готово");
+        Console.ReadKey();
+    }
+}

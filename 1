@@ -1,0 +1,25 @@
+using System;
+using System.Runtime.InteropServices;
+
+class Program
+{
+    // підключеня 
+    [DllImport("user32.dll")]
+    public static extern int MessageBox(IntPtr hWnd, string text, string caption, int type);
+
+    static void Main()
+    {
+        //  інфо
+
+        MessageBox(IntPtr.Zero, "Я Назар", "Інфо", 0);
+
+        MessageBox(IntPtr.Zero, "Я вчусь в 11 класі", "Інфо", 0);
+
+        MessageBox(IntPtr.Zero, "Я програміст", "Інфо", 0);
+
+        MessageBox(IntPtr.Zero, "Мені подобається C#", "Інфо", 0);
+
+        Console.WriteLine("Кінець");
+        Console.ReadKey();
+    }
+}
